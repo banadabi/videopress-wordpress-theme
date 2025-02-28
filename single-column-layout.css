@@ -1,0 +1,492 @@
+/* Grid düzenini iptal edip tek sütun oluştur */
+.videopress-posts-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 30px !important;
+    margin-top: 30px !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Post öğelerini yatay düzende göster */
+.videopress-post-item {
+    background: #fff !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    margin-bottom: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+}
+
+/* Thumbnail boyutunu sabitle */
+.videopress-post-thumbnail {
+    position: relative !important;
+    flex: 0 0 300px !important;
+    height: 220px !important;
+}
+
+.videopress-post-thumbnail img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* İçerik alanını düzenle */
+.videopress-post-content {
+    flex: 1 !important;
+    padding: 25px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Başlık stilini ayarla */
+.videopress-post-title {
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    margin-bottom: 15px !important;
+}
+
+/* Özet stilini ayarla */
+.videopress-post-excerpt {
+    margin-bottom: 20px !important;
+    line-height: 1.6 !important;
+    flex-grow: 1 !important;
+}
+
+/* Meta bilgilerini düzenle */
+.videopress-post-meta {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding-top: 15px !important;
+    border-top: 1px solid #eee !important;
+}
+
+/* Mobil görünüm için düzenlemeler */
+@media (max-width: 768px) {
+    .videopress-post-item {
+        flex-direction: column !important;
+    }
+    
+    .videopress-post-thumbnail {
+        flex: none !important;
+        width: 100% !important;
+        height: 200px !important;
+    }
+}
+
+/* Karanlık Mod Stilleri - Gelişmiş Kontrast */
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .videopress-post-item {
+    background-color: #1e1e1e !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .videopress-post-title a {
+    color: #ffffff !important;
+}
+
+body.dark-mode .videopress-post-excerpt {
+    color: #cccccc !important;
+}
+
+body.dark-mode .videopress-post-meta {
+    border-top-color: #333333 !important;
+    color: #aaaaaa !important;
+}
+
+body.dark-mode .videopress-post-date {
+    color: #999999 !important;
+}
+
+body.dark-mode .videopress-section-title {
+    color: #ffffff !important;
+    border-bottom-color: #333333 !important;
+}
+
+body.dark-mode .videopress-filter-container {
+    background-color: #1e1e1e !important;
+    border-color: #333333 !important;
+}
+
+body.dark-mode .filter-button {
+    background-color: #333333 !important;
+    color: #e0e0e0 !important;
+    border-color: #444444 !important;
+}
+
+body.dark-mode .filter-button.active {
+    background-color: #2c7cb0 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .videopress-search-input {
+    background-color: #333333 !important;
+    color: #e0e0e0 !important;
+    border-color: #444444 !important;
+}
+
+/* Filtreleme ve Arama Bölümü Stilleri */
+.videopress-filter-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 20px !important;
+    margin-bottom: 30px !important;
+    background-color: #f5f5f5 !important;
+    border-radius: 10px !important;
+    border: 1px solid #e0e0e0 !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.videopress-filter-buttons {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+}
+
+.filter-button {
+    padding: 8px 15px !important;
+    border-radius: 30px !important;
+    background-color: #f0f0f0 !important;
+    color: #333333 !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    border: 1px solid #ddd !important;
+    transition: all 0.3s ease !important;
+}
+
+.filter-button:hover {
+    background-color: #e0e0e0 !important;
+    transform: translateY(-2px) !important;
+}
+
+.filter-button.active {
+    background-color: #2c7cb0 !important;
+    color: white !important;
+    border-color: #2c7cb0 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+}
+
+.videopress-search-box {
+    position: relative !important;
+    flex: 0 0 300px !important;
+}
+
+.videopress-search-input {
+    width: 100% !important;
+    padding: 8px 15px !important;
+    padding-right: 40px !important;
+    border-radius: 30px !important;
+    border: 1px solid #ddd !important;
+    font-size: 14px !important;
+}
+
+.videopress-search-icon {
+    position: absolute !important;
+    right: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #777 !important;
+}
+
+@media (max-width: 768px) {
+    .videopress-filter-container {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    .videopress-search-box {
+        width: 100% !important;
+        flex: none !important;
+    }
+}
+
+/* Dark Mode Toggle - Geliştirilmiş versiyon */
+.dark-mode-toggle {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    background-color: #333 !important;
+    color: #fff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
+    z-index: 1000 !important;
+    transition: all 0.3s ease !important;
+    font-size: 22px !important;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background-color: #f0f0f0 !important;
+    color: #333 !important;
+}
+
+/* Video Modal Stilleri */
+.videopress-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.videopress-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+}
+
+.videopress-modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+.videopress-modal-close:hover {
+    opacity: 1;
+}
+
+.videopress-modal-iframe {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 oran */
+    position: relative;
+    background-color: #000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.videopress-modal-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Videoya özel play butonu değişikliği */
+.videopress-post-thumbnail.youtube-thumbnail {
+    cursor: pointer;
+}
+
+.videopress-post-thumbnail.youtube-thumbnail:hover .videopress-play-button {
+    transform: scale(1.1);
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+/* Audio oynatıcı stilleri */
+.audio-player {
+    width: 100%;
+    max-width: 100%;
+}
+
+body.dark-mode .videopress-modal {
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+/* Sayfa kaydırmayı engelleme */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Ses Modalı Stilleri */
+.archive-thumbnail {
+    cursor: pointer !important;
+    position: relative !important;
+}
+
+.archive-thumbnail::after {
+    content: "\f028" !important;
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    color: white !important;
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 24px !important;
+    transition: all 0.3s ease !important;
+}
+
+.archive-thumbnail:hover::after {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    transform: translate(-50%, -50%) scale(1.1) !important;
+}
+
+/* Ses oynatıcı stilleri */
+.videopress-modal-audio {
+    width: 100% !important;
+    background: rgba(30, 30, 30, 0.9) !important;
+    padding: 30px !important;
+    border-radius: 8px !important;
+    color: white !important;
+    text-align: center !important;
+}
+
+.videopress-modal-audio h3 {
+    margin-bottom: 20px !important;
+    font-size: 24px !important;
+}
+
+.audio-player-container {
+    margin: 0 auto !important;
+    max-width: 600px !important;
+}
+
+.audio-player {
+    width: 100% !important;
+    height: 50px !important;
+    background-color: #333 !important;
+    border-radius: 4px !important;
+}
+
+/* Özel audio kontrolleri */
+.audio-player::-webkit-media-controls-panel {
+    background-color: #333 !important;
+}
+
+.audio-player::-webkit-media-controls-play-button {
+    background-color: #2c7cb0 !important;
+    border-radius: 50% !important;
+}
+
+body.dark-mode .videopress-modal-audio {
+    background: rgba(20, 20, 20, 0.95) !important;
+}
+
+/* Kategori Sekmeleri Stilleri */
+.videopress-category-tabs {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+    margin-bottom: 20px !important;
+    padding: 0 20px !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow-x: auto !important;
+    padding-bottom: 10px !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.category-tab {
+    padding: 10px 20px !important;
+    background-color: #f0f0f0 !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    transition: all 0.3s ease !important;
+    white-space: nowrap !important;
+    border: 1px solid #ddd !important;
+}
+
+.category-tab:hover {
+    background-color: #e0e0e0 !important;
+}
+
+.category-tab.active {
+    background-color: #2c7cb0 !important;
+    color: white !important;
+    border-color: #2c7cb0 !important;
+}
+
+body.dark-mode .videopress-category-tabs {
+    scrollbar-color: #444 #222 !important;
+}
+
+body.dark-mode .category-tab {
+    background-color: #333333 !important;
+    color: #e0e0e0 !important;
+    border-color: #444444 !important;
+}
+
+body.dark-mode .category-tab:hover {
+    background-color: #444444 !important;
+}
+
+body.dark-mode .category-tab.active {
+    background-color: #2c7cb0 !important;
+    color: #ffffff !important;
+}
+
+/* Yatay kaydırma için stil düzenlemeleri */
+.videopress-category-tabs::-webkit-scrollbar {
+    height: 6px !important;
+}
+
+.videopress-category-tabs::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+    border-radius: 10px !important;
+}
+
+.videopress-category-tabs::-webkit-scrollbar-thumb {
+    background: #888 !important;
+    border-radius: 10px !important;
+}
+
+.videopress-category-tabs::-webkit-scrollbar-thumb:hover {
+    background: #555 !important;
+}
+
+body.dark-mode .videopress-category-tabs::-webkit-scrollbar-track {
+    background: #222 !important;
+}
+
+body.dark-mode .videopress-category-tabs::-webkit-scrollbar-thumb {
+    background: #444 !important;
+}
+
+body.dark-mode .videopress-category-tabs::-webkit-scrollbar-thumb:hover {
+    background: #666 !important;
+} 
