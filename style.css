@@ -1,0 +1,1956 @@
+/*
+Theme Name: Twenty Twenty-Four
+Theme URI: https://wordpress.org/themes/twentytwentyfour/
+Author: the WordPress team
+Author URI: https://wordpress.org
+Description: Twenty Twenty-Four is designed to be flexible, versatile and applicable to any website. Its collection of templates and patterns tailor to different needs, such as presenting a business, blogging and writing or showcasing work. A multitude of possibilities open up with just a few adjustments to color and typography. Twenty Twenty-Four comes with style variations and full page designs to help speed up the site building process, is fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
+Requires at least: 6.4
+Tested up to: 6.7
+Requires PHP: 7.0
+Version: 1.3
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwentyfour
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
+*/
+
+.youtube-post {
+    margin-bottom: 40px;
+}
+
+.youtube-embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 oranı */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.youtube-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.featured-post {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.featured-post .entry-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.featured-post .entry-summary {
+    margin-top: 15px;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 15px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.read-more:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+/* VideoPress YouTube Özelleştirmeleri */
+.videopress-youtube-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 oranı */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.videopress-youtube-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.videopress-featured-videos {
+    margin: 40px 0;
+}
+
+.videopress-section-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.videopress-video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.videopress-video-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.videopress-video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.videopress-video-thumbnail {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.videopress-video-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.videopress-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.videopress-play-button:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid #fff;
+    margin-left: 5px;
+}
+
+.videopress-video-title {
+    padding: 15px 15px 5px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.videopress-video-title a {
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.videopress-video-meta {
+    padding: 0 15px 15px;
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 13px;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .videopress-video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* VideoPress Tema Düzeltmeleri */
+.videopress-posts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.videopress-post-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.videopress-post-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.videopress-post-thumbnail {
+    position: relative;
+    flex: 0 0 300px;
+    height: 220px;
+}
+
+.videopress-post-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.videopress-post-content {
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.videopress-post-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.videopress-post-title a {
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.videopress-post-excerpt {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.videopress-post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.videopress-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Dini içerik için özel stiller */
+.videopress-section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.videopress-section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background-color: #4a90e2;
+}
+
+/* Mobil uyumluluk için ek düzeltmeler */
+@media (max-width: 768px) {
+    .videopress-post-item {
+        flex-direction: column;
+    }
+    
+    .videopress-post-thumbnail {
+        flex: none;
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* Tahir Büyükkörükçü Hocaefendi - Mobil App Tarzı Tasarım */
+:root {
+    --primary-color: #1e5f74;
+    --secondary-color: #4a90e2;
+    --accent-color: #f39c12;
+    --text-color: #333;
+    --light-text: #fff;
+    --bg-color: #f9f9f9;
+    --card-bg: #fff;
+    --border-radius: 10px;
+    --box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    --transition: all 0.3s ease;
+}
+
+/* Temel Mobil Uyumluluk */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000;
+    color: var(--light-text);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header Mobil Uyumluluk */
+.site-header {
+    padding: 15px;
+}
+
+.site-branding {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-title {
+    font-size: 24px;
+    margin: 0;
+}
+
+.main-navigation {
+    width: 100%;
+}
+
+/* Mobil Menü */
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 10px 0;
+    }
+    
+    .main-navigation ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .main-navigation ul.show {
+        display: flex;
+    }
+    
+    .main-navigation li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .main-navigation a {
+        display: block;
+        padding: 12px;
+    }
+}
+
+/* Ana İçerik Alanı */
+.videopress-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Responsive Grid Sistemleri */
+.videopress-video-grid,
+.videopress-posts-grid,
+.videopress-archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 992px) {
+    .videopress-video-grid,
+    .videopress-posts-grid,
+    .videopress-archive-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .videopress-video-grid,
+    .videopress-posts-grid,
+    .videopress-archive-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .videopress-container {
+        padding: 15px;
+    }
+    
+    .videopress-section-title {
+        font-size: 22px;
+    }
+}
+
+/* Mobil için Kart Tasarımları */
+.videopress-video-item,
+.videopress-post-item,
+.videopress-archive-item {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Mobil için Yazı Boyutları */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+    
+    .videopress-video-title,
+    .videopress-post-title,
+    .videopress-archive-title {
+        font-size: 18px;
+    }
+    
+    .videopress-post-excerpt,
+    .videopress-archive-excerpt {
+        font-size: 14px;
+    }
+    
+    .videopress-video-meta,
+    .videopress-post-meta,
+    .videopress-archive-meta {
+        font-size: 12px;
+    }
+}
+
+/* Mobil için Butonlar ve Etkileşimli Öğeler */
+@media (max-width: 768px) {
+    .videopress-play-button {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .videopress-play-button:before {
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 14px solid #fff;
+    }
+    
+    .videopress-archive-download a,
+    .read-more {
+        display: block;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .pagination .page-numbers,
+    .videopress-archive-pagination .page-numbers {
+        padding: 8px 12px;
+        margin: 0 2px;
+        font-size: 14px;
+    }
+}
+
+/* Mobil için Footer */
+.site-footer {
+    padding: 20px 15px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .site-footer .footer-widgets {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Mobil için Arama Formu */
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-form label {
+    flex: 1 0 70%;
+}
+
+.search-form .search-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-form .search-submit {
+    flex: 1 0 30%;
+    padding: 10px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .search-form label,
+    .search-form .search-submit {
+        flex: 1 0 100%;
+    }
+    
+    .search-form .search-field,
+    .search-form .search-submit {
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Mobil için Tablo Düzenlemeleri */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+    
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-column);
+        font-weight: bold;
+    }
+}
+
+/* Mobil için Yorum Bölümü */
+.comment-list {
+    padding: 0;
+    list-style: none;
+}
+
+.comment-body {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+}
+
+.comment-meta {
+    margin-bottom: 10px;
+}
+
+.comment-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.comment-form input[type="submit"] {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Mobil için Sayfalama */
+.pagination,
+.videopress-archive-pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+/* Mobil için Ek Düzenlemeler */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .videopress-container {
+        padding: 10px;
+    }
+    
+    .videopress-video-grid,
+    .videopress-posts-grid,
+    .videopress-archive-grid {
+        gap: 15px;
+    }
+    
+    .videopress-video-item,
+    .videopress-post-item,
+    .videopress-archive-item {
+        margin-bottom: 15px;
+    }
+    
+    .videopress-video-title,
+    .videopress-post-title,
+    .videopress-archive-title {
+        padding: 10px 10px 5px;
+    }
+    
+    .videopress-video-meta,
+    .videopress-post-meta,
+    .videopress-archive-meta {
+        padding: 0 10px 10px;
+    }
+    
+    .videopress-post-content,
+    .videopress-archive-content {
+        padding: 10px;
+    }
+}
+
+/* Tahir Büyükkörükçü Hocaefendi - Özel Ses Oynatıcı */
+.tahir-audio-player {
+    background: linear-gradient(135deg, #1e5f74 0%, #4a90e2 100%);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.tahir-audio-player-inner {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+}
+
+.tahir-audio-thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    position: relative;
+    margin-right: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.tahir-audio-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+}
+
+.tahir-audio-icon:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid #1e5f74;
+}
+
+.tahir-audio-details {
+    flex-grow: 1;
+    color: #fff;
+}
+
+.tahir-audio-title {
+    margin: 0 0 15px;
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tahir-audio-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tahir-audio-play-btn {
+    background: none;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    position: relative;
+    cursor: pointer;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.tahir-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid #fff;
+    transition: all 0.3s ease;
+}
+
+.tahir-play-icon.playing {
+    height: 14px;
+    width: 14px;
+    border: none;
+    background: #fff;
+    left: 50%;
+}
+
+.tahir-audio-progress {
+    flex-grow: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    margin: 0 15px;
+}
+
+.tahir-audio-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #fff;
+    border-radius: 3px;
+    width: 0;
+}
+
+.tahir-audio-time {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    margin-right: 15px;
+    white-space: nowrap;
+}
+
+.tahir-audio-volume {
+    position: relative;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.tahir-audio-volume-btn {
+    background: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.tahir-volume-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.tahir-volume-icon.muted {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z'/%3E%3C/svg%3E");
+}
+
+.tahir-audio-volume-slider {
+    width: 60px;
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+.tahir-audio-volume-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #fff;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.tahir-audio-download {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: block;
+}
+
+.tahir-download-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .tahir-audio-player-inner {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .tahir-audio-thumbnail {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .tahir-audio-controls {
+        width: 100%;
+    }
+    
+    .tahir-audio-progress {
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    .tahir-audio-time {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+    
+    .tahir-audio-volume {
+        margin: 5px 0;
+    }
+    
+    .tahir-audio-controls {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .tahir-audio-volume-slider {
+        width: 40px;
+    }
+    
+    .tahir-audio-title {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+/* Mobil App Tarzı Düzen */
+.tahir-mobile-app {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Shorts Tarzı Kaydırmalı İçerik */
+.tahir-shorts-container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    position: relative;
+}
+
+.tahir-short-item {
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* Video Konteyneri */
+.tahir-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tahir-video-container video,
+.tahir-video-container iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Ses Oynatıcı Konteyneri */
+.tahir-audio-short {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(30,95,116,0.8) 100%);
+}
+
+.tahir-audio-short-inner {
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.tahir-audio-short-thumbnail {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background: rgba(255,255,255,0.2);
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+.tahir-audio-short-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tahir-audio-short-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.tahir-audio-short-icon:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 18px solid var(--primary-color);
+}
+
+.tahir-audio-short-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.tahir-audio-short-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tahir-audio-short-progress {
+    width: 100%;
+    height: 8px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.tahir-audio-short-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 4px;
+    width: 0;
+}
+
+.tahir-audio-short-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.tahir-audio-short-play-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    border: none;
+    position: relative;
+    cursor: pointer;
+    margin: 0 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.tahir-audio-short-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 18px solid #fff;
+}
+
+.tahir-audio-short-play-icon.playing {
+    height: 20px;
+    width: 20px;
+    border: none;
+    background: #fff;
+    left: 50%;
+}
+
+.tahir-audio-short-time {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+}
+
+/* Kısa Bilgi Kartı */
+.tahir-short-info {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.tahir-short-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.tahir-short-meta {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+}
+
+/* Yan Butonlar */
+.tahir-short-actions {
+    position: absolute;
+    right: 15px;
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tahir-short-action-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.tahir-short-action-btn i {
+    font-size: 20px;
+}
+
+.tahir-short-action-label {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #fff;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .tahir-audio-short-thumbnail {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .tahir-audio-short-title {
+        font-size: 18px;
+    }
+    
+    .tahir-audio-short-play-btn {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tahir-audio-short-thumbnail {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .tahir-audio-short-title {
+        font-size: 16px;
+    }
+    
+    .tahir-short-title {
+        font-size: 16px;
+    }
+}
+/* Ana Sayfa Shorts Bölümü */
+.tahir-shorts-section {
+    margin: 30px 0;
+}
+
+.tahir-shorts-slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background-color: #000;
+}
+
+.tahir-shorts-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.tahir-short-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.tahir-short-item.active {
+    display: block;
+    z-index: 1;
+}
+
+.tahir-video-container,
+.tahir-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tahir-video-container iframe,
+.tahir-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tahir-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ses Oynatıcı */
+.tahir-audio-short {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(30,95,116,0.8) 100%);
+}
+
+.tahir-audio-short-inner {
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.tahir-audio-short-thumbnail {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background: rgba(255,255,255,0.2);
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+.tahir-audio-short-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tahir-audio-short-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.tahir-audio-short-icon:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 18px solid #1e5f74;
+}
+
+.tahir-audio-short-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tahir-audio-short-controls {
+    width: 100%;
+}
+
+.tahir-audio-short-progress {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tahir-audio-short-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #f39c12;
+    border-radius: 3px;
+    width: 0;
+}
+
+.tahir-audio-short-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.tahir-audio-short-play-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #f39c12;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    margin: 0 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.tahir-audio-short-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 18px solid #fff;
+}
+
+.tahir-audio-short-play-icon.playing {
+    height: 20px;
+    width: 20px;
+    border: none;
+    background: #fff;
+    left: 50%;
+}
+
+.tahir-audio-short-time {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+}
+
+/* Bilgi Kartı */
+.tahir-short-info {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.tahir-short-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.tahir-short-meta {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+}
+
+/* Yan Butonlar */
+.tahir-short-actions {
+    position: absolute;
+    right: 15px;
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.tahir-short-action-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.tahir-short-action-btn .dashicons {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.tahir-short-action-label {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #fff;
+}
+
+/* Gezinme Butonları */
+.tahir-shorts-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+.tahir-shorts-prev,
+.tahir-shorts-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.tahir-shorts-prev:hover,
+.tahir-shorts-next:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .tahir-shorts-slider {
+        height: 500px;
+    }
+    
+    .tahir-audio-short-thumbnail {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .tahir-audio-short-title {
+        font-size: 18px;
+    }
+    
+    .tahir-audio-short-play-btn {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .tahir-short-actions {
+        bottom: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tahir-shorts-slider {
+        height: 400px;
+    }
+    
+    .tahir-audio-short-thumbnail {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .tahir-audio-short-title {
+        font-size: 16px;
+    }
+    
+    .tahir-short-title {
+        font-size: 16px;
+    }
+    
+    .tahir-short-action-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Shorts sayfası için temel stil düzeltmeleri */
+.tahir-shorts-body {
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tahir-mobile-app {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.tahir-shorts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Başlık Ekleyelim */
+.tahir-shorts-header {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.tahir-shorts-title {
+    font-size: 32px;
+    color: #333;
+    margin: 0;
+    font-weight: 700;
+}
+
+.tahir-shorts-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Dark Mod Stilleri - Öncelik Düzeltmesi */
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+body.light-mode {
+    background-color: #f9f9f9 !important;
+    color: #333333 !important;
+}
+
+/* Tema değiştirme düğmesi */
+.tahir-theme-toggle {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    background-color: #0066cc !important;
+    color: #fff !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    z-index: 9999 !important; /* Z-index değerini artıralım */
+    border: none !important;
+    transition: transform 0.3s ease, background-color 0.3s ease !important;
+}
+
+.tahir-theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.tahir-theme-toggle i {
+    font-size: 28px;
+}
+
+body.dark-mode .tahir-theme-toggle {
+    background-color: #4d8edb;
+}
+
+/* Yükleniyor göstergesi */
+.tahir-loading {
+    text-align: center;
+    padding: 20px;
+    display: none;
+}
+
+.tahir-loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(128, 128, 128, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--accent-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Kart Tasarımı İyileştirmeleri */
+.tahir-short-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.tahir-short-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px var(--box-shadow);
+}
+
+/* Kart İçeriği İyileştirmeleri */
+.tahir-video-wrapper,
+.tahir-audio-wrapper {
+    width: 100%;
+    background-color: #000;
+    position: relative;
+    padding-top: 56.25%; /* 16:9 oranı */
+}
+
+.tahir-video-wrapper iframe,
+.tahir-video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.tahir-audio-wrapper {
+    padding-top: 80px;
+    background: linear-gradient(45deg, #1a1a1a, #333);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tahir-audio-wrapper audio {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90%;
+}
+
+/* Sayfalama Stilleri */
+.videopress-archive-pagination {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.videopress-archive-pagination .page-numbers {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 0 4px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.videopress-archive-pagination .page-numbers.current {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.videopress-archive-pagination .page-numbers:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+body.dark-mode .videopress-archive-pagination .page-numbers {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .videopress-archive-pagination .page-numbers.current {
+    background-color: #4d8edb;
+    color: #fff;
+}
+
+body.dark-mode .videopress-archive-pagination .page-numbers:hover {
+    background-color: #333;
+}
+
+/* Yükleniyor Göstergesi Stilleri */
+.videopress-loading {
+    text-align: center;
+    padding: 30px;
+    margin: 20px 0;
+    display: none;
+}
+
+.videopress-loading-spinner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #0066cc;
+    animation: spin 1s ease-in-out infinite;
+}
+
+body.dark-mode .videopress-loading-spinner {
+    border-color: rgba(128, 128, 128, 0.2);
+    border-top-color: #4d8edb;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* İçerik Tipi Etiketleri */
+.videopress-post-type {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.youtube-type {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.archive-type {
+    background-color: #2c7cb0;
+    color: #fff;
+}
+
+.text-type {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+/* YouTube Thumbnail İyileştirmeleri */
+.youtube-thumbnail {
+    position: relative;
+}
+
+.videopress-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.videopress-play-button:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid #fff;
+    margin-left: 5px;
+}
+
+/* Archive.org Thumbnail İyileştirmeleri */
+.archive-thumbnail {
+    position: relative;
+    background-color: #f5f5f5;
+}
+
+.archive-audio-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #2c7cb0, #1a5276);
+}
+
+.archive-audio-icon:before {
+    content: '\f028';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 48px;
+    color: #fff;
+}
+
+/* Dark Mode Uyumluluğu */
+body.dark-mode .videopress-post-item {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .videopress-post-title a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .videopress-post-excerpt {
+    color: #aaa;
+}
+
+body.dark-mode .videopress-post-meta {
+    color: #888;
+}
+
+body.dark-mode .archive-thumbnail {
+    background-color: #333;
+}
+
+body.dark-mode .videopress-end-message {
+    color: #aaa;
+}
+
+/* Varsayılan Thumbnail */
+.default-thumbnail {
+    background: linear-gradient(45deg, #f5f5f5, #e0e0e0);
+}
+
+.default-thumbnail-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.default-thumbnail-icon:before {
+    content: '\f15c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 48px;
+    color: #999;
+}
+
+body.dark-mode .default-thumbnail {
+    background: linear-gradient(45deg, #2a2a2a, #333);
+}
+
+body.dark-mode .default-thumbnail-icon:before {
+    color: #777;
+}
+
+/* Dark mode uyumluluğu */
+body.dark-mode .videopress-section-title {
+    color: #e0e0e0;
+    border-bottom-color: #333;
+}
+
+body.dark-mode .videopress-post-meta {
+    border-top-color: #333;
+}
