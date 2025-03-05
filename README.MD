@@ -51,3 +51,8 @@ Video ve ses içeriklerini ön plana çıkaran, filtreleme ve modal oynatma öze
 ## 📝 Not
 
 Bu tema, video ve ses içeriklerine odaklanan web siteleri için özel olarak tasarlanmıştır.
+
+
+
+[![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/banadabi)
+
